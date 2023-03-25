@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()" [>
+ <div>
+    <label>Name </label>
+    <input type="text" />
+</div>
+<div>
+   <label>Gmail </label>
+   <input type="text" />
+</div>
+<div>
+  <label>Phone number </label>
+  <input type="text" />
+</div>
+<div> 
+   <button type="submit" >Submit</button>
+</div>
+</form>
+
+onSubmit(){
+
+link.subscribe(data=>{
+
+if(data.gmail===gmail)
+snackbar.open("user exists")
+})
+else{
+snackbar.open("form submited")}
+}
