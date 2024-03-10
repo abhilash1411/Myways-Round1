@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" placeholder="Enter details">
+    <button id="btn" onclick="add()">Add</button>
+    <button id="btn1" onclick="edit()">Edit</button>
+    <button id="btn2" onclick="Delete()">Delete</button>
+    <ol></ol>
+    <script src="./Ass.js"></script> -->
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Name List</title>
+</head>
+<body>
+    <h1>Name List</h1>
+    <input type="text" id="nameInput" placeholder="Enter a name">
+    <button onclick="addName()">Add Name</button>
+    <ol id="nameList"></ol>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const nameList = document.getElementById("nameList");
+
+        function addName() {
+            const newName = nameInput.value;
+            if (newName !== "") {
+                const li = document.createElement("li");
+                li.textContent = newName;
+                li.innerHTML += ' <button onclick="editName(this)">Edit</button> <button onclick="deleteName(this)">Delete</button>';
+                nameList.appendChild(li);
+                nameInput.value = "";
+            }
+        }
+
+        function editName(button) {
+            const li = button.parentElement;
+            const newName = prompt("Edit name:", li.textContent);
+            if (newName !== null ) {
+                li.textContent = newName;
+                li.innerHTML += ' <button onclick="editName(this)">Edit</button> <button onclick="deleteName(this)">Delete</button>';
+            }
+        }
+
+        function deleteName(button) {
+            const li = button.parentElement;
+            nameList.removeChild(li);
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
